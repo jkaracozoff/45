@@ -1,0 +1,172 @@
+<!-- views/index.ejs -->
+<!doctype html>
+<html>
+<head>
+    <title>45 Says</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> 
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link rel="stylesheet" href="45.css">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:200normal" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:300normal" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:400normal" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:600normal" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:700normal" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,600i,700" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="quotes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/7.0.0/mark.min.js"></script>
+
+</head>
+<body>
+
+    <div><nav style="color: black; text-align: center;"><p><a href="/signup">register</a></p></nav></div>
+<div class="padded-multiline">
+    <h2><span style="margin-left: 1.5%; box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.35);">
+        <span style="padding: 0; " id="strikeout">Very, Very Nice</span> Words <br> Speeches, and Interviews
+        </span>
+    </h2>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+            <div style="margin-top: 1.25%;" id="quote-box">
+                <h4 style="margin: 0"><span id="quote"></span><br/></h4>
+                <div style="margin: 8px 5px 0 0; float: right; display: inline-block;">
+                    <a href id="source"><br></a>
+                </div>    
+            </div>
+    </div><!--end container-->   
+</div>
+
+<div style="margin: 1% 0 1% 5%; " class="row">
+        <h5 style="letter-spacing: .5px;" class="col-sm-8"> TRANSCRIPTS</h5>
+        <h5 style="letter-spacing: .5px;" class="col-sm-4"> MOST COMMON WORDS & SENTIMENT</h5>
+</div>
+
+<div class="container">
+    <div style="margin-bottom: 4.5%; z-index: 1;" class="col-sm-12 card">
+        <div class="row">
+                <div class="col-sm-12">
+                    <div class="transcript">
+                            <h6 id="transcript-header">African American History Month Listening Session</h6>
+                            <h6 id="date"> Feb 2017</h6>
+                            <hr>
+                            <div style="display: inline-block; margin-top: 2%;">
+                                <div class="ellipsis">
+                                    <p class="transcript-content">
+                                    THE PRESIDENT: Hello, everybody. These are a lot of my friends, but you have been so helpful. And we did well. The election, it came out really well. Next time we’ll triple it up or quadruple it, right?  We want to get over 51, right?  At least 51.  
+                                    <br>Well, this is Black History Month, so this is our little breakfast, our little get-together. Hi, Lynne, how are you?  
+                                    <br><br>
+                                    THE PRESIDENT: Nice to see you. And just a few notes. During this month, we honor the tremendous history of the African Americans throughout our country -- throughout the world, if you really think about it, right? And their story is one of unimaginable sacrifice, hard work and faith in America.
+                                    I’ve gotten a real glimpse -- during the campaign, I’d go around with Ben to a lot of different places that I wasn’t so familiar with. They’re incredible people.  And I want to thank Ben Carson, who’s going to be heading up HUD. It’s a big job, and it’s a job that’s not only housing, it’s mind and spirit, right, Ben?  And you understand that. 
+                                    </p>
+                                </div>
+                            </div>      
+                    </div>
+                    <div class="col-sm-12 text-center"> 
+                        <button class="btn" onclick=" window.open('https://www.whitehouse.gov/the-press-office/2017/02/01/remarks-president-trump-african-american-history-month-listening-session','_blank')">Full Transcript</button>
+                    </div>
+                </div>
+                <!--<div class="col-sm-4">
+                        <div class="stats-header">
+                            <div class="tooltips">MOST COMMON
+                                <span class="tooltip-text">Excludes prespositions like 'the' or 'a'.</span>
+                            </div>
+                            <div class="stats">Our: 12%, Very 10%,
+                            </div>
+                        </div>
+                        <div class="stats-header">
+                            <div class="tooltips">PERCENTAGE OF SPEECH
+                                <span class="tooltip-text">Percentage of speech these words used up.</span>
+                            </div>
+                            <div class="stats">Our: 12%, Very 10%,
+                            </div>
+                        </div>
+                 </div>-->
+        </div>
+    </div>  
+</div>
+<!--Begin separate card-->
+<div class="container">
+    <div style="margin-bottom: 0; z-index: 1;" class="col-sm-12 card">
+        <div class="row">
+                <div class="col-sm-12   ">
+                    <div class="transcript">
+                            <h6 id="transcript-header">Statement on the Paris Climate Accord</h6>
+                            <h6 id="date"> Jun 2017</h6>
+                            <hr class="style2">
+                            <div style="display: inline-block; margin-top: 2%;">
+                                <div class="ellipsis">
+                                    <p class="transcript-content">
+                                    THE PRESIDENT: Thank you very much. Thank you. I would like to begin by addressing the terrorist attack in Manila. We’re closely monitoring the situation, and I will continue to give updates if anything happens during this period of time. But it is really very sad as to what’s going on throughout the world with terror. Our thoughts and our prayers are with all of those affected.<br><br>
+                                    Before we discuss the Paris Accord, I’d like to begin with an update on our tremendous -- absolutely tremendous -- economic progress since Election Day on November 8th. The economy is starting to come back, and very, very rapidly. We’ve added $3.3 trillion in stock market value to our economy, and more than a million private sector jobs.<br><br>
+                                    I have just returned from a trip overseas where we concluded nearly $350 billion of military and economic development for the United States, creating hundreds of thousands of jobs. It was a very, very successful trip, believe me. Thank you. Thank you.  
+                                    </p>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-sm-12 text-center"> 
+                        <button class="btn" onclick=" window.open('https://www.whitehouse.gov/the-press-office/2017/06/01/statement-president-trump-paris-climate-accord','_blank')">Full Transcript</button>
+                    </div>
+                </div>
+                <!--<div class="col-sm-4">
+                        <div class="stats-header">
+                            <div class="tooltips">MOST COMMON
+                                <span class="tooltip-text">Excludes prespositions like 'the' or 'a'.</span>
+                            </div>
+                            <div class="stats">Our: 12%, Very 10%,
+                            </div>
+                        </div>
+                        <div class="stats-header">
+                            <div class="tooltips">PERCENTAGE OF SPEECH
+                                <span class="tooltip-text">Percentage of speech these words used up.</span>
+                            </div>
+                            <div class="stats">Our: 12%, Very 10%,
+                            </div>
+                        </div>
+                 </div>-->
+        </div>
+    </div>  
+</div>
+
+<footer>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="container">
+                <h1 style="text-align: center; margin-top: 10px;">
+                    <span style="font-family: Courier New; font-weight: 700; color: #FF596E;">45</span>
+                    <span style="font-family: Courier New; font-weight: 700; margin-left: -.2%;">Says</span><br>
+                </h1>
+                <!--<div>
+                <img style="margin: -10px 0 0 57%; height: 40px; width: 75px;" src="/images/signature.png">
+                </div>-->
+            </div>
+            <!--<img style="margin-bottom: .2%; margin-left: -.2%" src="/images/speechIcon.svg" width="30" height="40">-->
+        </div>
+    </div>
+</footer>
+
+</body>
+<script>
+var instance = new Mark(document.querySelector(".transcript-content"));
+instance.mark(["going", "have", "during", "our", "very"], {
+    "accuracy": "exactly",
+    "acrossElements": true,
+    "diacritics": false,
+    "separateWordSearch": true,
+});
+</script>
+</html>

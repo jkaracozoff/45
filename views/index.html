@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:200normal" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:400normal" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:600normal" rel="stylesheet">
+    
+<title>Recent Vitals | Stel Life</title>
+  <link rel="stylesheet" href="dashboard.css" media="all" />
+</head>
+
+<body>
+
+<!--Explanation-->
+<div class="container-fluid explanation">
+  <h5 class="col-xs-12">
+Patients in this view are visible for 24 hours. After that time, they will be retrievable in a separate tab. 
+  </h5>
+</div>
+
+<!--Time category-->
+<div class="container-fluid time-section">
+  <div class="row align-items-center">
+    <h2> Vitals measured less than an hour ago </h2>
+    <hr>  
+  </div>
+</div>
+
+<!--Begin card deck-->
+<div class="container-fluid">
+  <div class="row">
+<!--Begin single graph card-->
+  <div class="card col-md-4">
+      <div class="container-fluid card-block">
+          <div class="row">
+            <!--Patient info--> 
+                  <div class="patient-info col-xs-12">
+                    <img class="patient-photo" src="placeholder.png">
+                    <div class="patient-name mt-2"> Last name, First name </div>
+                  </div>
+  <!--Most recent-->
+              <div class="col-sm-6"> 
+                <div class="row">
+                  <div class="most-recent mr-4">
+                    <div class="most-recent data">
+                      <h3 style="color: orange"><strong>Prehypertension 1</strong></h3>
+                      <h3> 120 lbs </h3>
+                      <div class="most-recent time">
+                      12:00PM
+                      </div>                  
+                    </div>
+                  </div>
+  <!--Other vitals-->          
+                  <div class="other-vitals ml-2">
+                    <h4><strong>Other vitals</strong></h4>         
+                    <div class="other-vitals data">
+                      <h4><strong>Type</strong>Measurement</h4>
+                      <h4><strong>Type</strong>Measure</h4>
+                      <h4><strong>Type</strong>Measurement</h4>
+                      <h4><strong>Type</strong>Measures</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  <!--Graph within card-->
+              <div class="col-sm-6 mt-2">
+                <div class="graph-container">
+                </div>
+              </div>
+
+          </div>
+      </div> 
+  </div>
+<!--End single graph card-->
+<!--Begin single graph card-->
+  <div class="card col-md-4">
+      <div class="container-fluid card-block">
+          <div class="row">
+            <!--Patient info--> 
+                  <div class="patient-info col-xs-12">
+                    <img class="patient-photo" src="placeholder.png">
+                    <div class="patient-name align-middle"> Last name, First name </div>
+                  </div>
+  <!--Most recent-->
+              <div class="col-sm-6"> 
+                <div class="row">
+                  <div class="most-recent mr-4">
+                    <div class="most-recent data">
+                      <h3 style="color: #7ED321"><strong>Normal</strong></h3>
+                      <h3> 120 lbs </h3>
+                      <div class="most-recent time">
+                      12:00PM
+                      </div>                  
+                    </div>
+                  </div>
+  <!--Other vitals-->          
+                  <div class="other-vitals ml-2">
+                    <h4><strong>Other vitals</strong></h4>         
+                    <div class="other-vitals data">
+                      <h4><strong>Type</strong>Measurement</h4>
+                      <h4><strong>Type</strong>Measure</h4>
+                      <h4><strong>Type</strong>Measurement</h4>
+                      <h4><strong>Type</strong>Measures</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  <!--Graph within card-->
+
+          </div>
+      </div> 
+  </div>
+<!--End single graph card-->
+
+<!--Begin single graph card-->
+  <div class="card col-md-4">
+      <div class="container-fluid card-block">
+          <div class="row">
+            <!--Patient info--> 
+              <div class="patient-info col-xs-12">
+                <img class="patient-photo" src="placeholder.png">
+                <div class="patient-name mt-2"> Last name, First name </div>
+              </div>
+  <!--Most recent-->
+              <div class="col-sm-6"> 
+                <div class="row">
+                  <div class="most-recent mr-4">
+                    <div class="most-recent data">
+                      <div><strong>Normal</strong>
+                      </div>
+                      <div class="most-recent measure">
+                      120 lbs
+                      </div>
+                      <div class="most-recent time">
+                      12:00PM
+                      </div>                  
+                    </div>
+                  </div>
+  <!--Other vitals-->          
+                  <div class="other-vitals ml-2">
+                    <h4><strong>Other vitals</strong></h4>         
+                    <div class="other-vitals data">
+                      <h4><strong>Type</strong>Measurement</h4>
+                      <h4><strong>Type</strong>Measure</h4>
+                      <h4><strong>Type</strong>Measurement</h4>
+                      <h4><strong>Type</strong>Measures</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  <!--Graph within card-->
+              <div class="col-sm-6 mt-2">
+                <div class="graph-container">
+                </div>
+              </div>
+
+          </div>
+      </div> 
+  </div>
+<!--End single graph card-->
+
+</div>
+<!--End one hour ago section-->
+
+<!--Begin older than an hour section-->
+<div class="container-fluid time-section">
+  <div class="row align-items-center">
+      <h2>
+      Vitals measured more than an hour ago </h2>
+  <hr>  
+  </div>
+</div>
+
+<!--End older than an hour section-->
+<!--
+          <div class = "StelCard card" >
+            <div class = "StelCard-block">
+               <img class = "patient-photo" source=""/>
+                  <p class ="patientName"> {card.name}</p>
+                  <div class ="StelGraph"/>
+                    <h4 class ="disposition">disposition goes here</h4>
+                    <h4 class ="vital">
+                    most recent vital goes here</h4>
+                    <p class ="timestamp">most recent timestamp goes here</p>
+                    <p class ="otherVitalsText">Other vitals</p>
+                    <div class ="otherVitalsItems">{otherVitals}</div>
+                  </div>
+            </div>
+          </div>  
+-->
+</body>
+
+</html>

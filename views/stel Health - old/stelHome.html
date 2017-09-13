@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Stel temporary</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <link href="https://fonts.googleapis.com/css?family=Avenir" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:200normal" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:300normal" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:400normal" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:600normal" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:700normal" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="stelBase.css">
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+</head>
+
+<body>
+<!--Start profile/header block-->
+<div style="height: 15%;" class="card">
+        <div class="row card-block-profile">
+                <div class="col-sm-9">
+                            <div style="display:inline-block; margin-top: .75em; width: 8em;" class="col-sm-3">
+                                <h4 style="font-weight: 800; color:#4A4A4A;">John Smith</h4>
+                                <div>
+                                    <div style="margin-top: 1%; width: 10em;" class="profile-container">
+                                        <h5><strong>BORN</strong></h5><h5>Jan 1, 1959</h5>
+                                        <h5><strong>BED</strong></h5><h5>14.1</h5>   
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:inline-block; margin-top: .75em; width: 8em;" class="col-sm-3">
+                                <h4 style="font-weight: 800; color:#4A4A4A;">Discharge</h4>
+                                <div>
+                                    <div style="margin-top: 1%; width: 20em;" class="profile-container">
+                                        <h5><strong>DATE</strong></h5><h5>Jan 1, 1959</h5>
+                                        <h5><strong>TIME SINCE</strong></h5> <h5>100 days</h5>   
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+<!--End profile/header block-->
+                            
+                        <!-- <div id="card-block-profile">
+                            <h4 style="font-weight: 800; position: relative; color:#4A4A4A">Conditions</h4>
+                        </div>
+                          <div id="card-block-profile">
+                            <h4 style="position: relative; width: 10em">Example condition</h4>
+                            <h4 style="position: relative;">Example of comorbidity</h4>
+                        </div>
+                        -->
+                <div class="col-sm-2">
+                            <a href="#" class="button button-primary">Contact Patient</a>
+                </div>
+        </div>
+</div>
+<!--Start summary view-->
+<div class="row">
+    <div class="col-sm-3">
+        <h4 style="color: #9B9B9B;" class="card-title">Summary of vitals since discharge</h4>
+        <div style="width: 100%;" class="card">
+            <div id="card-block-summary">
+                    <h2 class="card-text">Blood Pressure
+                    </h2>
+                    <hr> 
+                        <div id="left-rail-delta">
+                            <h5><strong> AT DISCHARGE
+                            </strong></h5>
+                            <h5> 80 mm Hg
+                            </h5>
+                        </div>
+                        <div style="margin-bottom: 1%;" id="left-rail-delta">    
+                            <h5><strong> SINCE DISCHARGE
+                            </strong></h5>
+                            <h5> 5 mm Hg <span class="decrease"> decrease </span>
+                            </h5>
+                        </div> 
+
+            </div>
+        </div>
+    </div>
+<!--End summary view-->
+<!--Start Most Recent/large measure view-->
+    <div class="col-sm-9">
+        <h4 style="color: #9B9B9B;" class="card-title">Most recent measurement</h4>
+        <div style="height: 585px; width: 100%;" class="card">
+    <!--The following will be ordered on recency-->
+                    <div id="card-block-recent-scroll">
+                            <div class="card-text">
+                                <h2 style="color: #4A4A4A;">Blood Pressure&nbsp;<span style="color: #9B9B9B; font-weight: 200;"> {timestamp} </h2>
+                            </div>    
+                        <hr>
+                            <div style="width:100%; margin-bottom: 1.5%;" class="row">
+                                    <div style="padding-left: 3%" class="col-sm-6">
+                                            <h1 class="card-block-large-measure">
+                                                180 / 30 mm Hg
+                                            </h1>
+                                            <div id="since-previous">
+                                                <h4 style="color: #9B9B9B; margin-bottom: 2%">
+                                                Change from previous measure 6 hours ago
+                                                </h4>
+                                                <h4>
+                                                Systolic <span class="decrease"> decrease</span> change
+                                                </h4>
+                                                <h4 style="margin-top: 1%; margin-bottom: 3%;"> 
+                                                Diastolic <span class="increase"> increase</span> change</h4>
+                                                
+                                                <a href="/stelpermalink.html">See history</a>
+                                            </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div id="line-chart">
+                                        </div>
+                                    </div>
+                            </div>
+                        
+                    
+                    </div>
+        </div>
+        <div style="height: 16em; width: 100%;" class="card">
+                    <div id="card-block-recent-scroll">
+                            <div class="card-text">
+                                <h2 style="color: #4A4A4A;">Blood Pressure&nbsp;<span style="color: #9B9B9B; font-weight: 200;"> {timestamp} </h2>
+                            </div>    
+                        <hr>
+                            <div style="width:100%; margin-bottom: 1.5%;" class="row">
+                                    <div style="padding-left: 3%" class="col-sm-6">
+                                            <h1 class="card-block-large-measure">
+                                                180 / 30 mm Hg
+                                            </h1>
+                                            <div id="since-previous">
+                                                <h4 style="color: #9B9B9B; margin-bottom: 2%">
+                                                Change from previous measure 6 hours ago
+                                                </h4>
+                                                <h4>
+                                                Systolic <span class="decrease"> decrease</span> change
+                                                </h4>
+                                                <h4 style="margin-top: 1%; margin-bottom: 3%;"> 
+                                                Diastolic <span class="increase"> increase</span> change</h4>
+                                                
+                                                <a href="/stelpermalink.html">See history</a>
+                                            </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div id="line-chart">
+                                        </div>
+                                    </div>
+                            </div>
+                        
+                    
+                    </div>
+        </div>
+        </div>
+    </div>
+</div>
+<!--End Most Recent/large measure view-->
+<!--Start chart details-->
+<script type="text/javascript">
+        Highcharts.chart('line-chart', {
+            title: {
+                text: ''
+                    },
+            chart: {
+              height: 200,
+            },
+            yAxis: {
+                title: {
+                text: ''
+                 }
+            },
+            xAxis: {
+                title: {
+                    text: 'Date'
+                },
+                type: 'datetime',
+                dateTimeLabelFormats: { //don't display the dummy year
+                    month: '%e. %b',
+                    year: '%b'
+                },
+            },
+            credits: {
+                enabled: false
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+            series: [{
+                name: 'Systolic',
+                data: [130, 131, 130, 130, 132, 132, 130, 135]
+                }, {
+                name: 'Diastolic',
+                data: [83, 83, 84, 88, 81, 81, 81, 84]
+                }, {
+                name: 'Pulse',
+                data: [62, 61, 62, 62, 66, 62, 61, 61]
+                }]
+});
+</script>
+<!--End chart details-->
+  </body>
+</html>

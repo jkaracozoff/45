@@ -1,0 +1,387 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Stel Permalink</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <link href="https://fonts.googleapis.com/css?family=Avenir" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:200normal" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:300normal" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:400normal" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:600normal" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:700normal" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<style>
+
+    body{
+        font-family: Nunito,sans-serif;
+        font-weight: 300; 
+        font-size:1em;
+        line-height:1.5;
+        padding:1%;
+        background-color: #F2F2F2;
+        color: #4A4A4A;
+    }
+    html{
+        overflow-x:hidden;
+    }
+    h1{
+        font-size:3em;
+        font-weight: 700;
+    }
+    h2{
+        font-size:1em;
+        font-weight: 700;
+        margin-bottom: 0.15em;
+    }
+    h3{
+        font-size: .7em;
+        font-weight: 400;
+        margin-bottom: 0.15em;
+        letter-spacing: 0.03em;
+    }
+    h4{
+        font-size:1.1em;
+        font-weight: 700;
+        margin-bottom: 0px;
+    }
+    h5{
+        font-size:.8em;
+        font-weight: 200; 
+        color:#9B9B9B;
+    }
+    hr{
+        border:0;border-top:1px solid #F3F3F3; margin:1% 0; margin-bottom: 1%; width: 95%;
+    }
+
+.button{
+    font-family: Nunito;
+    font-weight:200;
+    line-height:1.2;
+    width: 22%;
+    padding:1.05%;
+    font-size:1em;
+    display: flex;
+    justify-content: center;
+    border-radius:2%;
+    -webkit-transition:all .06s ease-in-out;
+    -o-transition:all .06s ease-in-out;
+    transition:all .06s ease-in-out;
+}
+.button:focus,.button:hover{
+    text-decoration:none
+}
+.button-primary{
+    color:#FF596E;
+    border: .15em solid #FF596E;
+}
+.button-primary:hover{
+    color:#fff;
+    background-color:#FF596E; 
+    text-decoration: none;
+}
+.button-primary.active,.button-primary:active,.show>{
+    color:#fff;
+    background-color:#FF596E;
+    background-image:none;
+}
+.avatar {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 55px;
+    height: 55px;
+    border: 1px solid #DCDCDC;
+    border-radius: 50%;
+    background-clip: padding-box;
+    box-sizing: border-box;
+    margin-top: -.2%;
+}
+#patient-profile{
+    margin-bottom: 1%;
+    margin-top: -2%;
+}
+.card-title{
+    margin-top: 1%; 
+}
+.card-block-last-measure{
+    margin-top: 1%;
+    margin-left: 6%;
+    margin-bottom: 1.5%;
+}
+.card-block-large-measure{
+    margin-left: 5%;
+    margin-top: 2%;
+}
+#card-block-recent{ 
+    padding: 1.75%;
+    margin-left: 1.75%; 
+}
+#card-block-profile{
+    margin-left: 1.5%;
+    margin-top: .5%;
+}
+#card-block-summary{
+    margin-left: 3%;
+    margin-top: 1.5%;
+}
+#history-data{
+	overflow: scroll;
+    height: 250px;
+}
+#since-previous{
+    margin-top: 3%;
+    margin-left: 5%;
+}
+#card-left-rail{
+    margin-top: 4.5%;
+    margin-left: 4.5%;
+    margin-bottom: 4.5%;
+}
+#left-rail-delta{
+    display: grid;
+    grid-template-columns: 50% 2fr;
+    margin-left: 2.5%;
+}
+#left-rail-history{
+    display: inline-grid;
+    grid-template-columns: 50% 1fr;
+    padding: 2%;
+    width: 90%;
+}
+@media (min-width: 1200px){
+.profile-container{
+    padding: .4%;
+    margin-top: .1%;
+    margin-left: 8.5%;
+    width: 90%;
+}}
+.decrease{
+    color: #7ED321;
+    font-weight: 700;
+}
+.increase{
+    color: #FF596E;
+    font-weight: 700;
+}
+.line-chart{
+    margin: 0 auto;
+}
+
+</style>
+</head>
+
+<body>
+<div class="patient-profile col-sm-12"></div>
+    <div style="height: 25%" class="card">
+        <div class="profile-container">    
+            <div style="width: 100%" class="row">               
+                <img style="margin-left:-6%; " class="avatar" src="/images/stel/carlos.png"></img>
+                <div id="card-block-profile">
+                    <h2 style="font-size: .9em; font-weight: 800; position: relative; color:#4A4A4A">John Smith</h2>
+                </div>    
+                <div id="card-block-profile">
+                    <h3 style="font-size: .9em; font-weight: 300; position: relative; color:#4A4A4A; width: 10em">Born Jan 1, 1959</h3>
+                    <h3 style="font-size: .9em; font-weight: 300; position: relative; color:#4A4A4A">Conditions:</h3>
+                </div>
+                <div style="margin-left: 4%" id="card-block-profile">
+                    <h2 style="font-size: .9em; font-weight: 800; position: relative; color:#4A4A4A">Discharge</h2>
+                </div> 
+                <div id="card-block-profile">
+                    <h3 style="font-size: .9em; font-weight: 300; position: relative; color:#4A4A4A; width: 10em">Feb 1, 2017</h3>
+                    <h3 style="font-size: .9em; font-weight: 300; position: relative; color:#4A4A4A">20 days ago</h3>
+                </div>
+                <div style="margin-left: auto" class="button button-primary">Contact Patient</div>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-sm-3">
+        <h5 style="font-size: 1.1em;margin-left: 1%; margin-top: 5%" class="card-title">History of measurements</h5>
+        <div class="card">
+            <div style="padding: 5%;" id="card-block-summary">
+                    <h4 style="color:#4A4A4A;  margin-bottom: 3%;"; class="card-text">Pulse Oximeter</h4>
+                        <div id="left-rail-delta">
+                            <h3> AT DISCHARGE
+                            </h3>
+                            <h5> 170 lbs
+                            </h5>
+                        </div>
+                        <div id="left-rail-delta">    
+                            <h3> SINCE DISCHARGE
+                            </h3>
+                            <h5> 5 lbs <span class="increase"> increase</span>
+                            </h5>
+                        </div>
+                        <hr>
+                        <div style="padding: 5%; margin-left: 10%" id="history-data">
+                        	<h3 style="font-weight: 700"> May 3 
+                        		<div id="left-rail-history">
+                           			<h3> 2:00PM
+                            		</h3>
+                            		<h5> 170 lbs
+                            		</h5>
+                            		<h3> 2:00PM
+                            		</h3>
+                            		<h5> 170 lbs
+                            		</h5>
+                            		<h3> 2:00PM
+                            		</h3>
+                            		<h5> 170 lbs
+                            		</h5>
+                            		<h3> 2:00PM
+                            		</h3>
+                            		<h5> 170 lbs
+                            		</h5>
+                            	</div>
+                        	</h3>
+                        <h3 style="font-weight: 700"> May 2 
+                        		<div id="left-rail-history">
+                           			<h3> 1:00PM
+                            		</h3>
+                            		<h5> 170 lbs
+                            		</h5>
+                            		<h3> 1:00PM
+                            		</h3>
+                            		<h5> 170 lbs
+                            		</h5>
+                            		<h3> 1:00PM
+                            		</h3>
+                            		<h5> 170 lbs
+                            		</h5>
+                            		<h3> 1:00PM
+                            		</h3>
+                            		<h5> 170 lbs
+                            		</h5>
+                            	</div>
+                        	</h3>
+                        	<h3 style="font-weight: 700"> May 2 
+                        		<div id="left-rail-history">
+                           			<h3> 1:00PM
+                            		</h3>
+                            		<h5> 170 lbs
+                            		</h5>
+                            		<h3> 1:00PM
+                            		</h3>
+                            		<h5> 170 lbs
+                            		</h5>
+                            		<h3> 1:00PM
+                            		</h3>
+                            		<h5> 170 lbs
+                            		</h5>
+                            		<h3> 1:00PM
+                            		</h3>
+                            		<h5> 170 lbs
+                            		</h5>
+                            	</div>
+                        	</h3>
+                        	<h3 style="font-weight: 700"> May 2 
+                        		<div id="left-rail-history">
+                           			<h3> 1:00PM
+                            		</h3>
+                            		<h5> 170 lbs
+                            		</h5>
+                            		<h3> 1:00PM
+                            		</h3>
+                            		<h5> 170 lbs
+                            		</h5>
+                            		<h3> 1:00PM
+                            		</h3>
+                            		<h5> 170 lbs
+                            		</h5>
+                            		<h3> 1:00PM
+                            		</h3>
+                            		<h5> 170 lbs
+                            		</h5>
+                            	</div>
+                        	</h3>
+        				</div>
+    		</div>
+		</div>
+	</div>
+	<div class="col-sm-9">
+    	<h5 style="font-size: 1.1em; margin-top: 1.5%" class="card-title">Most recent measurement</h5>
+        <div class="card">
+            <div id="card-block-recent">
+                <div style="height: 100%; width: 100%" class="row">
+                        <h4>Pulse Oximeter</h4>
+                        <h5 style="font-size: 1.1em; margin-left: .5%"> 4:00pm EST - 4 hours ago </h5>
+                        <hr>    
+                        <div class="col-md-12">   
+                                    <h1 class="card-block-large-measure">
+                                        180 / 30 mm Hg
+                                    </h1>
+                                    <div id="since-previous">
+                                        <h5 style="color: #9B9B9B;">
+                                        Change since previous measure 6 hours ago
+                                        </h5>
+                                        <h4>
+                                        Systolic <span class="decrease"> decrease</span> change
+                                        </h4>
+                                        <h4 style="margin-top: .5%"> 
+                                        Diastolic <span class="increase"> increase</span> change
+                                        </h4>
+                                    </div>
+                        </div>
+                
+                    
+                    <div class="col-md-12">
+                            <div style="height: 22em; width: 100%; margin-top: 2%" id="line-chart">
+                            </div>	
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+        Highcharts.chart('line-chart', {
+            yAxis: {
+                title: {
+                text: 'Number of Employees'
+                 }
+                 },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+
+            plotOptions: {
+                series: {
+                pointStart: 2010
+                }
+                },
+
+            series: [{
+                name: 'Systolic',
+                data: [130, 131, 130, 130, 132, 132, 130, 135]
+                }, {
+                name: 'Diastolic',
+                data: [83, 83, 84, 88, 81, 81, 81, 84]
+                }, {
+                name: 'Pulse',
+                data: [62, 61, 62, 62, 66, 62, 61, 61]
+                }]
+});
+</script>
+  </body>
+</html>

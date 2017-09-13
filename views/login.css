@@ -1,0 +1,139 @@
+    body{
+        font-family: "Nunito";
+        font-size: 15px;
+        background: #FBFBFB;
+        letter-spacing: .2px;
+}
+
+    h1 {
+        font-size: 2em;
+        letter-spacing: .2px;
+}
+
+    h2 {
+        font-size: 1.75em;
+        letter-spacing: .2px;
+}
+
+    h3 {
+        font-size: 1.5em;
+        letter-spacing: .2px;
+}
+
+    h4 {
+        font-size: 1.15em;
+        font-weight: 600;
+        letter-spacing: .2px;
+}
+
+    h5 {
+        font-size: .75em;
+        font-weight: 200;
+        letter-spacing: .2px;
+}
+
+    a {
+        color: black;
+        font-weight: 600;
+        text-decoration: none !important;
+}
+
+    label {
+        margin: 2% 0 2% 4%;
+}
+
+    .card {
+        content: "";
+        max-width: 25%; 
+        min-width: 600px;
+        max-height: 25%;
+        min-height: 300px;
+        position: relative;
+        background: #FFFFFF;
+        margin: 4% 0 0 0;
+        padding: 0;
+        border-radius: 2px 2px 0 0;
+}
+
+    .w3-button {
+        max-height: 10%;
+        min-height: 72px;
+        max-width: 25%; 
+        min-width: 600px;
+        font-family: "Nunito";
+        border-radius: 2px;
+        color: #FFFFFF;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+        letter-spacing: .2px;
+        cursor: pointer;
+        border: none !important;
+        margin: 0 auto;
+        border-radius: 0 0 2px 2px; 
+}
+
+    .w3-blue {
+        background-color: #1F79E2 !important; 
+}
+
+    .container{
+        margin: 4% auto 0 auto;
+        width: 100%;
+}
+
+    .form-group{
+        max-height: 75%;
+        min-height: 100px;
+        max-width: 0; 
+        min-width: 600px;
+        margin: 0 auto 0 auto;
+}
+
+    #header-logo{   
+        padding: 20px 0 0 20px;
+}
+    
+    .form-control{
+        width: 80%;
+        margin: 0 auto;
+        color: #4A4A4A;
+        line-height: 1.5;
+}
+
+    ::-webkit-input-placeholder { /* WebKit browsers */
+        color:    #D6D6D6;
+        font-size: .8em;
+        opacity: .5;
+}
+
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color:    #D6D6D6;
+        font-size: .8em;
+        opacity: .5;
+}
+
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:    #D6D6D6;
+        font-size: .8em;
+        opacity: .5;
+}
+
+    :-ms-input-placeholder { /* Internet Explorer 10+ */
+        color:    #D6D6D6;
+        font-size: .8em;
+        opacity: .5;
+}
+
+    .login-block{
+        max-height: 70%;
+        min-height: 400px;
+        max-width: 0; 
+        min-width: 600px;
+        margin: 0 auto;
+        padding-top: 4%;
+}
+
+    .login-footer{
+        padding: 4% 0 0 0;
+        margin: 0 auto;
+}
+
